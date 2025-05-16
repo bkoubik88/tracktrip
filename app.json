@@ -9,14 +9,30 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Diese App benötigt Zugriff auf die Kamera, um Profilbilder aufzunehmen.",
+        "NSPhotoLibraryUsageDescription": "Diese App benötigt Zugriff auf deine Fotos, um Profilbilder auszuwählen.",
+        "NSLocationWhenInUseUsageDescription": "Diese App benötigt Zugriff auf deinen Standort, um Aufgaben zu positionieren."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "package": "com.legalizesince88.tracktrip"
     },
     "web": {
       "bundler": "metro",
@@ -33,10 +49,18 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "8426a664-d68e-4538-b471-d26eeab013fe"
+      }
+    },
+    "owner": "legalizesince88"
   }
 }
