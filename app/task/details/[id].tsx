@@ -2,7 +2,6 @@ import TaskStatusTracker from "@/components/TaskStatusTracker";
 import TaskTimeline from "@/components/TaskTimeline";
 import { useOfflineStatus } from "@/hooks/useOfflineStatus";
 import { db, firebaseAuth } from "@/lib/firebase";
-import { sendPushNotification } from "@/lib/sendPushNotification";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import NetInfo from "@react-native-community/netinfo";
 import { useLocalSearchParams, useRouter } from "expo-router";
@@ -62,10 +61,7 @@ export default function TaskDetailScreen() {
     const all = await AsyncStorage.getItem("tasks");
     const list = safeParseArray(all);
     const now = new Date().toISOString();
-    await sendPushNotification(task.assignedToPushToken, {
-      title: "Status geändert",
-      body: `Aufgabe ist jetzt ${nextStatus}`,
-    });
+
     const updatedList = list.map((t: any) => {
       if (t.id === id) {
         return {

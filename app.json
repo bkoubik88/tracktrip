@@ -8,6 +8,8 @@
     "scheme": "tracktrip",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "jsEngine": "jsc",
+
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
