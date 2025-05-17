@@ -20,11 +20,11 @@ import * as Notifications from "expo-notifications";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
-    shouldPlaySound: false,
     shouldSetBadge: true,
     shouldShowBanner: true,
     shouldShowList: true,
     shouldShowAlert: true,
+    shouldPlaySound: true,
   }),
 });
 
@@ -220,10 +220,14 @@ async function registerForPushNotificationsAsync() {
 
   if (Platform.OS === "android") {
     await Notifications.setNotificationChannelAsync("myNotificationChannel", {
-      name: "A channel is needed for the permissions prompt to appear",
+      name: "Benachrichtigungen",
       importance: Notifications.AndroidImportance.MAX,
+      sound: "default", // wichtig für Ton
       vibrationPattern: [0, 250, 250, 250],
       lightColor: "#FF231F7C",
+      enableVibrate: true,
+      showBadge: true,
+      lockscreenVisibility: Notifications.AndroidNotificationVisibility.PUBLIC,
     });
   }
 
