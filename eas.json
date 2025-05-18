@@ -12,13 +12,9 @@
       "distribution": "internal"
     },
     "production": {
-      "autoIncrement": true,
-      "node": {
-        "installCommand": "npm install"
-      }
+      "autoIncrement": true
     }
   },
-
   "submit": {
     "production": {}
   }
