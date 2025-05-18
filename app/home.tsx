@@ -18,6 +18,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import * as Notifications from "expo-notifications";
 
+//CHANGES
+
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldSetBadge: true,
